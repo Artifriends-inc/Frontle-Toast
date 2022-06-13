@@ -15,7 +15,7 @@ export class Toast {
     toastClass = '';
     toastContentsClass = '';
     transitionSeconds = '0.3';
-    delaySeconds = '3';
+    holdSeconds = '3';
 
     awake = () => {};
     start = () => {};
@@ -116,7 +116,7 @@ export class Toast {
             // close toast
             this.autoClose = setTimeout(() => {
                 this.close();
-            }, this.delaySeconds * 1000);
+            }, this.holdSeconds * 1000);
 
             // run lifecycle
             this.start();

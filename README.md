@@ -1,6 +1,6 @@
-# Frontle Modal
+# Frontle Toast
 
-Modal UI in Frontle
+Toast UI in Frontle
 
 
 
@@ -12,27 +12,22 @@ Modal UI in Frontle
 
 ```javascript
 <style>
-  .testModalContents{
+  .testToastContents{
       font-size: 16px;
   }
-  .testModalContents1{
+  .testToastContents1{
       color: black;
   }
 </style>
 
-let modal = new Modal(this.handler, `
-    <div>this is a modal<div>
-    <button id="modalCloseButton">this is a close button</button>
+let toast = new Toast(this.handler, `
+    <div>this is a toast<div>
 `);
-modal.modalContentsClass = 'testModalContents testModalContents1';
-modal.start = () => {
-    console.log('modal start!');
-
-    document.getElementById('modalCloseButton').onclick = () => {
-        modal.close();
-    }
+toast.toastContentsClass = 'testToastContents testToastContents1';
+toast.start = () => {
+    console.log('toast start!');
 }
-modal.open();
+toast.open();
 ```
 
 
@@ -42,104 +37,102 @@ modal.open();
 Installation is done using the
 
 ```shell
-$ frontle install-original frontle-modal
+$ frontle install-original frontle-toast
 ```
 
 
 
 ## Function
 
-#### new modal(handler, html)
+#### new toast(handler, html)
 
-Creates a modal object
+Create a toast object
 
 ```javascript
-let modal = new Modal(this.handler, `
-    <div>this is a modal<div>
-    <button id="modalCloseButton">this is a close button</button>
+let toast = new Toast(this.handler, `
+    <div>this is a toast<div>
 `);
 ```
 
 
 
-#### modal.modalClass
+#### toast.toastClass
 
-Sets the class of a modal
+Sets the class of a toast
 
 ```javascript
-modal.modalClass = 'classname';
-modal.modalContentsClass = 'classname';
-modal.modalBackgroundClass = 'classname';
+toast.toastClass = 'classname';
+toast.toastContentsClass = 'classname';
 ```
 
 
 
-#### modal.transitionSeconds
+#### toast.transitionSeconds
 
-Setting the Modal Animation Time
+Setting the Toast Animation time
 
 ```javascript
-modal.transitionSeconds = '0.3';
+toast.transitionSeconds = '0.3';
 ```
 
 
 
-#### modal.backgroundClickExit
+#### toast.holdSeconds
 
-Set whether to end the modal when you click on the modal background
+Setting the Toast hold time
 
 ```javascript
-modal.backgroundClickExit = 'true';
+toast.holdSeconds = '3';
 ```
 
 
 
-#### modal.awake
+#### toast.awake
 
-Lifecycle running before the modal is rendered
+Lifecycle running before the toast is rendered
 
 ```javascript
-modal.awake () => { console.log('before rendering') }
+toast.awake () => { console.log('before rendering') }
 ```
 
 
 
-#### modal.start
+#### toast.start
 
-Lifecycle that runs after the modal is rendered
+Lifecycle that runs after the toast is rendered
 
 ```javascript
-modal.start () => { console.log('after rendering') }
+toast.start () => { console.log('after rendering') }
 ```
 
 
 
-#### modal.end
+#### toast.end
 
-Lifecycle running before modal termination
+Lifecycle running before toast termination
 
 ```javascript
-modal.end () => { console.log('end') }
+toast.end () => { console.log('end') }
 ```
 
 
 
-#### modal.open()
+#### toast.open()
 
-Open modal
+Open toast
 
 ```javascript
-modal.open();
+toast.open();
 ```
 
 
 
-#### modal.close()
+#### toast.close()
 
-Close modal
+Close toast
 
 ```javascript
-modal.close();
+toast.close();
 ```
 
 
@@ -156,9 +149,9 @@ The original author of frontle-modal is [MushStory](https://github.com/MushStory
 
 
 
-[npm-downloads-image]: https://badgen.net/npm/dm/frontle-modal
-[npm-downloads-url]: https://npmcharts.com/compare/frontle-modal?minimal=true
-[npm-install-size-image]: https://badgen.net/packagephobia/install/frontle-modal
-[npm-install-size-url]: https://packagephobia.com/result?p=frontle-modal
-[npm-url]: https://npmjs.org/package/frontle-modal
-[npm-version-image]: https://badgen.net/npm/v/frontle-modal
+[npm-downloads-image]: https://badgen.net/npm/dm/frontle-toast
+[npm-downloads-url]: https://npmcharts.com/compare/frontle-toast?minimal=true
+[npm-install-size-image]: https://badgen.net/packagephobia/install/frontle-toast
+[npm-install-size-url]: https://packagephobia.com/result?p=frontle-toast
+[npm-url]: https://npmjs.org/package/frontle-toast
+[npm-version-image]: https://badgen.net/npm/v/frontle-toast
