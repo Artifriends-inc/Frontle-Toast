@@ -56,9 +56,9 @@ let toast = new Toast(this.handler, `
 
 
 
-#### toast.toastClass
+#### toast.CSSClass
 
-Sets the class of a toast
+Set the css class of a toast
 
 ```javascript
 toast.toastClass = 'classname';
@@ -69,7 +69,7 @@ toast.toastContentsClass = 'classname';
 
 #### toast.transitionSeconds
 
-Setting the Toast Animation time
+Set the Toast Animation time
 
 ```javascript
 toast.transitionSeconds = '0.3';
@@ -79,7 +79,7 @@ toast.transitionSeconds = '0.3';
 
 #### toast.holdSeconds
 
-Setting the Toast hold time
+Set the Toast hold time
 
 ```javascript
 toast.holdSeconds = '3';

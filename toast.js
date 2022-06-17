@@ -73,7 +73,6 @@ export class Toast {
                     font-size: 0.94rem;
                     color: #ffffff;
                     opacity: 1;
-                    z-index: ${zIndex};
                 }
             `;
             document.head.insertBefore(toastCSSElement, document.head.childNodes[0]);
@@ -81,7 +80,7 @@ export class Toast {
 
         // set html
         let html = `
-            <div id="frontleToastContents_${this.toastId}" class="frontleToastContents ${this.toastContentsClass}">${this.html}</div>
+            <div id="frontleToastContents_${this.toastId}" class="frontleToastContents ${this.toastContentsClass}" style="z-index: ${zIndex}">${this.html}</div>
         `;
 
         // add toast
