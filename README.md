@@ -139,7 +139,7 @@ toast.close();
 
 ## People
 
-The original author of frontle-modal is [MushStory](https://github.com/MushStory)
+The original author of frontle-toast is [MushStory](https://github.com/MushStory)
 
 
 
