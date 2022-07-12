@@ -5,10 +5,10 @@ import {ToastManager} from "./toastManager.js";
 export class Toast {
     toastManager = null;
     toastId = null;
+    handler = null;
     autoClose = null;
 
     // required options
-    handler = null;
     html = ``;
 
     // custom options
@@ -21,14 +21,13 @@ export class Toast {
     start = () => {};
     end = () => {};
 
-    constructor(handler, html) {
-        if(handler === null) throw 'handler must be entered';
+    constructor(html) {
         if(html === null) throw 'html must be entered';
 
-        this.handler = handler;
         this.html = html;
 
-        this.toastManager = ToastManager.getInstance(this.handler);
+        this.handler = document.querySelector('.rootPage').id;
+        this.toastManager = ToastManager.getInstance();
     }
 
     open() {

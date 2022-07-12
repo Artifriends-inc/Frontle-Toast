@@ -2,27 +2,27 @@
 
 Toast UI in Frontle
 
-
-
  [![NPM Version][npm-version-image]][npm-url]
 
  [![NPM Install Size][npm-install-size-image]][npm-install-size-url]
 
  [![NPM Downloads][npm-downloads-image]][npm-downloads-url]
 
-```javascript
-<style>
-  .testToastContents{
-      font-size: 16px;
-  }
-  .testToastContents1{
-      color: black;
-  }
-</style>
+![화면-기록-2022-07-12-오후-4.50.51](https://user-images.githubusercontent.com/49587288/178438423-d5967579-8d20-4707-acba-3c9e5a9a5245.gif)
 
-let toast = new Toast(this.handler, `
-    <div>this is a toast<div>
-`);
+```javascript
+// at css file
+.testToastContents{
+    font-size: 16px;
+}
+.testToastContents1{
+    color: black;
+}
+
+// at js file
+import {Toast} from "../../frontle/browser_modules/frontle-toast/toast.js";
+
+let toast = new Toast(`<div>this is a toast<div>`);
 toast.toastContentsClass = 'testToastContents testToastContents1';
 toast.start = () => {
     console.log('toast start!');
@@ -34,17 +34,17 @@ toast.open();
 
 ## Installation
 
-Installation is done using the
+**How to install from Frontle**
 
 ```shell
-$ frontle install-original frontle-toast
+$ frontle install frontle-toast
 ```
 
 
 
 ## Function
 
-#### new toast(handler, html)
+#### new toast(html)
 
 Create a toast object
 
@@ -69,7 +69,7 @@ toast.toastContentsClass = 'classname';
 
 #### toast.transitionSeconds
 
-Set the Toast Animation time
+Set the toast animation time
 
 ```javascript
 toast.transitionSeconds = '0.3';
@@ -79,7 +79,7 @@ toast.transitionSeconds = '0.3';
 
 #### toast.holdSeconds
 
-Set the Toast hold time
+Set the toast hold time
 
 ```javascript
 toast.holdSeconds = '3';
@@ -89,7 +89,7 @@ toast.holdSeconds = '3';
 
 #### toast.awake
 
-Lifecycle running before the toast is rendered
+This lifecycle runs before toast rendering.
 
 ```javascript
 toast.awake () => { console.log('before rendering') }
@@ -99,7 +99,7 @@ toast.awake () => { console.log('before rendering') }
 
 #### toast.start
 
-Lifecycle that runs after the toast is rendered
+This lifecycle runs after toast rendered
 
 ```javascript
 toast.start () => { console.log('after rendering') }
@@ -109,7 +109,7 @@ toast.start () => { console.log('after rendering') }
 
 #### toast.end
 
-Lifecycle running before toast termination
+This lifecycle runs before toast termination
 
 ```javascript
 toast.end () => { console.log('end') }
