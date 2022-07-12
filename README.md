@@ -49,9 +49,7 @@ $ frontle install frontle-toast
 Create a toast object
 
 ```javascript
-let toast = new Toast(this.handler, `
-    <div>this is a toast<div>
-`);
+let toast = new Toast(`<div>this is a toast<div>`);
 ```
 
 
@@ -61,8 +59,8 @@ let toast = new Toast(this.handler, `
 Set the css class of a toast
 
 ```javascript
-toast.toastClass = 'classname';
-toast.toastContentsClass = 'classname';
+toast.toastClass = 'class name';
+toast.toastContentsClass = 'class name';
 ```
 
 
