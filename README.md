@@ -59,8 +59,8 @@ let toast = new Toast(`<div>this is a toast<div>`);
 Set the css class of a toast
 
 ```javascript
-toast.toastClass = 'class name';
-toast.toastContentsClass = 'class name';
+toast.toastClass = 'css_class_name';
+toast.toastContentsClass = 'css_class_name';
 ```
 
 
