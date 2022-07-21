@@ -27,7 +27,7 @@ export class Toast {
         this.html = html;
 
         this.handler = document.querySelector('.rootPage').id;
-        this.toastManager = ToastManager.getInstance();
+        this.toastManager = new ToastManager();
     }
 
     open() {

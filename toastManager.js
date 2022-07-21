@@ -3,18 +3,17 @@
 import {zIndexManager} from "../zindex-maximumvalue-manager/zIndexManager.js";
 
 export class ToastManager {
-    static instance = null;
-    static getInstance() {
+    static _instance = null;
+    constructor() {
         const handler = document.querySelector('.rootPage').id;
 
-        if (this.instance === null) {
-            this.instance = new this();
-            this.instance.init(handler);
-        } else {
-            if(this.instance.handler !== handler) this.instance.init(handler);
+        if (ToastManager._instance) {
+            if(ToastManager._instance.handler !== handler) ToastManager._instance.init(handler);
+            return ToastManager._instance;
         }
 
-        return this.instance;
+        this.init(handler);
+        ToastManager._instance = this;
     }
 
     zIndexManager = null;
@@ -24,10 +23,8 @@ export class ToastManager {
     openingStatus = {};
     closingStatus = {};
 
-    constructor() {}
-
     init(handler) {
-        this.zIndexManager = zIndexManager.getInstance();
+        this.zIndexManager = new zIndexManager();
         this.handler = handler;
         this.toastCount = 0;
         this.openedStatus = {};
