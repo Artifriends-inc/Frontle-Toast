@@ -1,6 +1,6 @@
 'use strict';
 
-import {zIndexManager} from "../zindex-maximumvalue-manager/zIndexManager.js";
+import {zIndexManager} from "./util/zIndexManager.js";
 
 export class ToastManager {
     static _instance = null;

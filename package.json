@@ -1,6 +1,6 @@
 {
   "name": "frontle-toast",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Toast UI in Frontle",
   "keywords": [
     "frontle",
@@ -31,9 +31,8 @@
     "LICENSE",
     "README.md",
     "toast.js",
-    "toastManager.js"
+    "toastManager.js",
+    "util/"
   ],
-  "dependencies": {
-    "zindex-maximumvalue-manager": "2.0.0"
-  }
+  "dependencies": {}
 }

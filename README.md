@@ -20,7 +20,7 @@ Toast UI in Frontle
 }
 
 // at js file
-import {Toast} from "../../frontle/browser_modules/frontle-toast/toast.js";
+import {Toast} from "../../browser_modules/frontle-toast/toast.js";
 
 let toast = new Toast(`<div>this is a toast<div>`);
 toast.toastContentsClass = 'testToastContents testToastContents1';
